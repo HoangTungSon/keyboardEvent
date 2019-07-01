@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keyboardEvent</title>
+</head>
+<body onload="ready()">
+<img src="Image/autumn.jpg" id="object" alt="object" style="position: absolute; width: 150px; height: 150px; left: 0; top: 0">
+</body>
+<script>
+    function leftKey() {
+        let object = document.getElementById('object');
+        object.style.left = parseInt(object.style.left) - 5 + 'px';
+    }
+
+    function rightKey() {
+        let object = document.getElementById('object');
+        object.style.left = parseInt(object.style.left) + 5 + 'px';
+    }
+
+    function upKey() {
+        let object = document.getElementById('object');
+        object.style.top = parseInt(object.style.top) - 5 + 'px';
+    }
+
+    function downKey() {
+        let object = document.getElementById('object');
+        object.style.top = parseInt(object.style.top) + 5 + 'px';
+    }
+
+    function moveSelect(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftKey();
+                break;
+            case 39:
+                rightKey();
+                break;
+            case 38:
+                upKey();
+                break;
+            case 40:
+                downKey();
+                break;
+        }
+    }
+
+    function ready() {
+        window.addEventListener('keydown', moveSelect)
+    }
+</script>
+</html>
